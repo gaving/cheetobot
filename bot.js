@@ -10,7 +10,7 @@ controller.spawn({
   token: process.env.token
 }).startRTM(err => console.log(err));
 
-controller.hears([`(${wordString})`], ['ambient'], (bot, message) => {
+controller.hears([`\\b(${wordString})\\b`], ['ambient'], (bot, message) => {
   Spartan.sendMessage(bot, message);
 });
 
